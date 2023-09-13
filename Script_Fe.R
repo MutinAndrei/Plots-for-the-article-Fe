@@ -4,9 +4,9 @@ library(ggplot2)
 library(cowplot)
 library(grid)
 library(patchwork)
+library(jpeg)
+library(ggpmisc)
 library(ggpubr)
-library(tidyr)
-
 
 #Figure 1 data (Calibration curve for iron)
 mart23 <- read.xlsx("2023-03-14_exp_data.xlsx", 10)
@@ -61,7 +61,7 @@ p6 <- ggplot(mart23, aes(x = NomCONC, y = RealCONC)) + geom_point(size = 2, col 
 ggarrange(p6, p5, ncol = 2, labels = c("A", "B"), font.label=list(size=20))
 
 #Save Fig.1
-ggsave("Fig1.png", width = 27, height = 12, units = "cm", dpi = 300)
+ggsave("Fig1.JPG", width = 27, height = 12, units = "cm", dpi = 300)
 
 
 
@@ -230,7 +230,7 @@ ggarrange(p2, p1, ncol = 1, nrow = 2, labels = c("A", "B"), font.label=list(size
           label.x = -0.01,
           label.y = 1.01)
 #save fig.3
-ggsave("Carboxylic acid 390nm ABS.png", width = 40, height = 45, units = "cm", dpi = 300)
+ggsave("fig3.JPG", width = 40, height = 45, units = "cm", dpi = 300)
 
 
 
@@ -370,7 +370,7 @@ ggarrange(p2,
           font.label = list(size = 20))
 
 #Save Fig.4
-ggsave("Fig3.png", width = 2362, height = 2244, units = "px", dpi = 300)
+ggsave("Fig4.JPG", width = 2362, height = 2244, units = "px", dpi = 300)
 
 
 #Statistics for Yeas extract
